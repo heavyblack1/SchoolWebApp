@@ -1,0 +1,44 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Edit a new Student";
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger alert-dismissible show d-flex flex-column align-items-start" role="alert">
+        <div>
+            <span class="fa fa-exclamation-circle me-2" aria-hidden="true"></span>
+            <strong>Error:</strong>
+        </div>
+        <ul class="mb-1">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input type="text" asp-for="@Model.FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input type="text" asp-for="@Model.LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateOfBirth"></label>
+        <input type="date" asp-for="@Model.DateOfBirth" class="form-control" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Update" />
+    </div>
+
+</form>

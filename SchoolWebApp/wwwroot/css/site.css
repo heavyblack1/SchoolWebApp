@@ -1,0 +1,145 @@
+/* Set Material color palette variables */
+:root {
+    --primary: #009688;
+    --secondary: #0097A7;
+    --success: #4CAF50;
+    --info: #00BCD4;
+    --warning: #FFC107;
+    --danger: #f44336;
+    --text-color: #000000;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --page-bg-color: #303030;
+        --text-color: #fff;
+        --form-bg-color: #1f1f1f;
+        --form-group-bg-color: #282828;
+    }
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--page-bg-color);
+    color: var(--text-color);
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+/* Style for cards */
+.card {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+/* Form styles */
+form {
+    background-color: var(--form-bg-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-group {
+    background-color: var(--form-group-bg-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--primary);
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    border-color: var(--warning);
+}
+
+.btn-warning:hover {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    border-color: var(--danger);
+}
+
+.btn-danger:hover {
+    background-color: #f44336;
+    border-color: #f44336;
+}
+
+.btn-success {
+    background-color: var(--success);
+    border-color: var(--success);
+}
+
+.btn-success:hover {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+/* Remove up/down buttons in number input field */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ALert bootstrap modal */
+
+.alert.position-fixed {
+    top: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.alert .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

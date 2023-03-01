@@ -1,0 +1,49 @@
+﻿@using SchoolWebApp.ViewModels
+@model GradesVM
+
+@{
+    ViewData["Title"] = "Edit a new Grades";
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger alert-dismissible show d-flex flex-column align-items-start" role="alert">
+        <div>
+            <span class="fa fa-exclamation-circle me-2" aria-hidden="true"></span>
+            <strong>Error:</strong>
+        </div>
+        <ul class="mb-1">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="StudentId" class="control-label"></label>
+        <select asp-for="StudentId" class="form-control" asp-items="ViewBag.Students"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="SubjectId" class="control-label"></label>
+        <select asp-for="SubjectId" class="form-control" asp-items="ViewBag.Subjects"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="What"></label>
+        <input asp-for="What" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Mark"></label>
+        <input asp-for="Mark" type="number" class="form-control" min="0" max="100" />
+    </div>
+    <div>
+        <input type="hidden" asp-for="@Model.Date"></input>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Update" />
+    </div>
+
+</form>
