@@ -14,4 +14,4 @@ School project which I am improving and there is still lots of work to be done.
 - [ ] Add Identity
 - [ ] Dashboard
 - [ ] Better handling of edge cases like multiple users working with same record
-- replace repeating things with blazor components 
+- [ ]replace repeating things with blazor components 
